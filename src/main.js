@@ -10,7 +10,9 @@ function setCardType(type){
     const colors ={
         visa: ["#2D57F2","#436D99"],
         mastercard: ["#CD5C5C", "#F0E68C"],
-        default: ["black", "gray"]
+        elo: ["#2D57F2", "#F0E68C"],
+        maestro: ["#2D57F2", "#CD5C5C"],
+        default: ["#DAA520", "gray"]
     }
     ccBgColor01.setAttribute('fill', colors[type][0])
     ccBgColor02.setAttribute('fill', colors[type][1])
@@ -53,6 +55,16 @@ const cardNumberPattern = {
             mask:"0000 0000 0000 0000",
             regex:/^4\d{0,15}/,
             cardType:"visa"
+        },
+        {
+            mask:"0000 0000 0000 0000",
+            regex:/^1\d{0,15}/,
+            cardType:"elo"
+        },
+        {
+            mask:"0000 0000 0000 0000",
+            regex:/^3\d{0,15}/,
+            cardType:"maestro"
         },
         {
             mask:"0000 0000 0000 0000",
